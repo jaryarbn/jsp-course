@@ -30,20 +30,17 @@ public class BookShopBean {
     }
 
     public ArrayList<String> getItems() {
-
         return arrayList;
     }
 
     public void processRequest(HttpServletRequest request) {
         if (submit == null) {
-            addItem(item);
-        }
-        if (submit.equals("¹ºÂò")) {
-            addItem(item);
-        } else {
             reset();
+        }else {
+            addItem(item);
         }
     }
+
     private void reset() {
         setSubmit(null);
         setItem(null);

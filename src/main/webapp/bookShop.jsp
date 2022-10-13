@@ -11,7 +11,7 @@
 <jsp:setProperty property="*" name="user" />
 <form action="bookShopCheck.jsp" method="get">
     <hr />
-    欢迎访问本网站，尊敬的：<%=user.getUserName()%>
+    欢迎访问本网站，
     <hr />
     请选择要购买的图书:
     <hr />
