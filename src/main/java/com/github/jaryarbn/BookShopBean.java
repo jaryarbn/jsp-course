@@ -36,7 +36,7 @@ public class BookShopBean {
     public void processRequest(HttpServletRequest request) {
         if (submit == null) {
             reset();
-        }else {
+        } else {
             addItem(item);
         }
     }
