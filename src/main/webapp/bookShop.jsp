@@ -7,7 +7,7 @@
     <title>在线购书系统</title>
 </head>
 <body bgcolor="8E8E8E">
-<jsp:useBean id="user" scope="page" class="com.example.demo.UserInfoBean" />
+<jsp:useBean id="user" scope="page" class="com.github.jaryarbn.UserInfoBean" />
 <jsp:setProperty property="*" name="user" />
 <form action="bookShopCheck.jsp" method="get">
     <hr />

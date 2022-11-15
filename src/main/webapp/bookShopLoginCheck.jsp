@@ -7,7 +7,7 @@
     <title>在线购书系统-处理登陆页面</title>
 </head>
 <body bgcolor="ccc fff">
-<jsp:useBean id="user" scope="page" class="com.example.demo.UserInfoBean"/>
+<jsp:useBean id="user" scope="page" class="com.github.jaryarbn.UserInfoBean"/>
 <jsp:setProperty property="*" name="user"/>
 <%
     if (user.getUserName() == null || user.getPassword() == null) {

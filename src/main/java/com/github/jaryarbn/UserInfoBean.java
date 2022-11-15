@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.github.jaryarbn;
 
 public class UserInfoBean {
     private String userName;

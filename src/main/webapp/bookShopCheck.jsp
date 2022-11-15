@@ -7,7 +7,7 @@
     <title>已购书信息</title>
 </head>
 <body>
-<jsp:useBean id="cart" scope="session" class="com.example.demo.BookShopBean"/>
+<jsp:useBean id="cart" scope="session" class="com.github.jaryarbn.BookShopBean"/>
 <jsp:setProperty property="*" name="cart"/>
 <%
     cart.processRequest(request);
