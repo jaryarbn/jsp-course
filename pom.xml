@@ -36,6 +36,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -55,9 +60,9 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>8.5.11</version>
+                <version>7.15.0</version>
                 <configuration>
-                    <url>url</url>
+                    <url>jdbc:mysql://localhost:3306/mini-shop</url>
                     <user>root</user>
                     <password>root</password>
                 </configuration>
