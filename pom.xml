@@ -52,6 +52,16 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.5.11</version>
+                <configuration>
+                    <url>url</url>
+                    <user>root</user>
+                    <password>root</password>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
