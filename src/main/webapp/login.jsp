@@ -13,7 +13,22 @@
 <body>
 <label for="username"></label><input type="text" id="username" name="username" placeholder="请输入用户名"/>
 <label for="password"></label><input type="password" id="password" name="password" placeholder="请输入用户名"/>
-<button type="button" name="loginButton">登 录</button>
+<button type="button" name="loginButton" onclick="loginVerify();">登 录</button>
 
 </body>
 </html>
+
+<script>
+    function loginVerify() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username == '') {
+            alert('用户名不能为空，请您输入！');
+            return;
+        }
+        if (password == ""){
+            alert("密码不能为空，请您输入！")
+            return;
+        }
+            }
+</script>
