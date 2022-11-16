@@ -1,4 +1,7 @@
 # 部署指南
+
+***NOTE*** : ***这个仓库只是为了交作业，JSP早已过时，不推荐学习***。
+
 [![build](https://img.shields.io/github/workflow/status/jaryarbn/jsp-course/Java%20CI%20with%20Maven?label=build&style=flat-square)](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml)
 - Install Docker and Run:
 ```
