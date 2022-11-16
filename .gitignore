@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+/shop-data
 ### IntelliJ IDEA ###
 .idea
 *.iws
