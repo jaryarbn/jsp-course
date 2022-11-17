@@ -20,7 +20,7 @@ docker run -d -v /path/to:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=roo
 ./mvnw flyway:clean flyway:migrate
 ```
 
-- Optional 1:Run in IntelliJ IDEA.
+- Optional 1:Run in IntelliJ IDEA Ultimate or another IDE that you can run.
 
 
 - Optional 2:Run with docker.
