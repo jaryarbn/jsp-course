@@ -5,13 +5,13 @@
 - Install Docker and Run MySQL:
 
 ```bash
-docker run -d -v /path/to:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mini-shop --name=mysql mysql
+docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mini-shop --name=mysql mysql
 ```
 
 - Or ARM Run：
 
 ```bash
-docker run -d -v /path/to:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mini-shop --name=mysql arm64v8/mysql
+docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mini-shop --name=mysql arm64v8/mysql
 ```
 
 - Initialize Database:
@@ -19,6 +19,8 @@ docker run -d -v /path/to:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=roo
 ```bash
 ./mvnw flyway:clean flyway:migrate
 ```
+**注意，如果你使用的是Windows，将所有的./mvnw换成./mvnw.cmd**
+
 
 - Optional 1: Run in IntelliJ IDEA Ultimate or another IDE that you can run.
 
