@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -41,11 +42,11 @@ public class CartServlet extends HttpServlet {
 		DataBase db=new DataBase();
 		ResultSet rs = db.getData("SELECT * FROM t_goods where goodsid="+index);
 		String goodsname = "";
-		Double price = 0.0;
+		BigDecimal price = BigDecimal.valueOf(0.0);
 		try {
 			if(rs.next()) {
 				goodsname=rs.getString(2);
-				price=rs.getDouble(3);
+				price= BigDecimal.valueOf(rs.getDouble(3));
 			}
 			else {
 				System.out.println("获取出错！！！");
