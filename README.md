@@ -31,7 +31,7 @@ docker run -d -v /path/to:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=roo
 
     - Generate the war package and put it in `/webapps` directory:
       ```bash
-      ./mvmw package
+      ./mvnw package
       ```
       ```bash
       mv
