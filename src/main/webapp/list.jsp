@@ -1,6 +1,6 @@
-<%@page import="com.github.jaryarbn.entity.User"%>
-<%@page import="com.github.jaryarbn.entity.Goods"%>
 <%@page import="java.util.List"%>
+<%@ page import="com.github.jaryarbn.entity.Goods" %>
+<%@ page import="com.github.jaryarbn.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
@@ -36,7 +36,7 @@ User u=(User)session.getAttribute("user");
     		%>
     		<tr>
     			<td><%=i %></td>
-    			<td><%=g.getGoodsName() %></td>
+    			<td><%=g.getGoodsname() %></td>
     			<td><%=g.getPrice() %></td>
     			<td><a href="<%=request.getContextPath()%>/check.user?tag=AddCart&index=<%=i %>">加入购物车</a></td>
     		</tr>

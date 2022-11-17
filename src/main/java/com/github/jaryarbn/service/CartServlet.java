@@ -3,13 +3,10 @@ package com.github.jaryarbn.service;
 import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.Cart;
 import com.github.jaryarbn.entity.User;
-
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -17,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("*.cart")
+
 public class CartServlet extends HttpServlet {
 	public static List<Cart> cart=new ArrayList<Cart>();
 	@Override
@@ -33,11 +30,7 @@ public class CartServlet extends HttpServlet {
 			show(req,resp);
 		}
 		if("/delete.cart".equals(path)){
-			try {
-				delete(req,resp);
-			} catch (SQLException e) {
-				throw new RuntimeException(e);
-			}
+			delete(req,resp);
 		}
 	}
 	
@@ -67,14 +60,14 @@ public class CartServlet extends HttpServlet {
 			if(rs.next()) {
 				String sql="UPDATE t_cart SET number="+(rs.getInt("number")+1)+",price="+(price*(rs.getInt("number")+1))+" where goodsname='"+goodsname+"' and un='"+username+"'";
 				db.setData(sql);
-				req.setAttribute("msg", "商品"+goodsname+"加入购物成成功！");
+				req.setAttribute("msg", "商品"+goodsname+"加入购物车成功！");
 				req.getRequestDispatcher("/show.goods").forward(req, resp);
 			}
 			else {
 				String sql="insert into t_cart(goodsname,number,price,un) values('"+goodsname+"',1,'"+price+"','"+username+"')";
 				System.out.print(sql);
 				db.setData(sql);
-				req.setAttribute("msg", "商品"+goodsname+"加入购物成成功！");
+				req.setAttribute("msg", "商品"+goodsname+"加入购物车成功！");
 				req.getRequestDispatcher("/show.goods").forward(req, resp);
 			}
 			
@@ -104,7 +97,7 @@ public class CartServlet extends HttpServlet {
 		try {
 			while(rs.next()) {
 				Cart c=new Cart();
-				c.setGoodsName(rs.getString(1));
+				c.setGoodsname(rs.getString(1));
 				c.setNumber(rs.getInt(2));
 				c.setPrice(rs.getDouble(3));
 				c.setUsername(username);
@@ -132,7 +125,7 @@ public class CartServlet extends HttpServlet {
 		db.close();
 	}
 
-	protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+	protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		DataBase db=new DataBase();
 		String type=req.getParameter("type");
 		//清空

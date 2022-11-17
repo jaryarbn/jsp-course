@@ -22,18 +22,14 @@
    	<tr>
    		<td>用户名:</td>
    		<td>
-            <label>
-                <input type="text" name="username">
-            </label>
-        </td>
+   			<input type="text" name="username">
+   		</td>
    	</tr>
    	<tr>
    		<td>密 码:</td>
    		<td>
-            <label>
-                <input type="password" name="password">
-            </label>
-        </td>
+   			<input type="password" name="password">
+   		</td>
    	</tr>
    </table>
    <input type="submit" value="登录">

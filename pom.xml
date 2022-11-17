@@ -25,9 +25,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.31</version>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.30</version>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -57,7 +57,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>9.8.1</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/mini-shop</url>
+                    <url>jdbc:mysql://localhost:3306/mini_shop</url>
                     <user>root</user>
                     <password>root</password>
                     <driver>com.mysql.cj.jdbc.Driver</driver>

@@ -1,5 +1,5 @@
-<%@page import="com.github.jaryarbn.entity.Order"%>
 <%@page import="java.util.List"%>
+<%@ page import="com.github.jaryarbn.entity.Order" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%
@@ -34,7 +34,7 @@ for(Order o:order){
 	 %>
 	 <tr>
 	 	<td><%=i %></td>
-	 	<td><%=o.getGoodsName() %></td>
+	 	<td><%=o.getGoodsname() %></td>
 	 	<td><%=o.getNumber() %></td>
 	 	<td><%=o.getPrice() %></td>
 	 </tr>

@@ -1,5 +1,5 @@
-<%@page import="com.github.jaryarbn.entity.Cart"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.github.jaryarbn.entity.Cart" %>
 <%
 //获取Cart List
 List<Cart> cart=(List<Cart>)request.getAttribute("cart");
@@ -41,10 +41,10 @@ int flag=1;
     	%>
     	<tr>
     		<td><%=i %></td>
-    		<td><%=c.getGoodsName() %></td>
+    		<td><%=c.getGoodsname() %></td>
     		<td><%=c.getNumber() %></td>
     		<td><%=c.getPrice() %></td>
-    		<td><a href="<%=request.getContextPath()%>/delete.cart?goodsname=<%=c.getGoodsName() %>">删除</a></td>
+    		<td><a href="<%=request.getContextPath()%>/delete.cart?goodsname=<%=c.getGoodsname() %>">删除</a></td>
     	</tr>
     	<%} }else
     	{%>

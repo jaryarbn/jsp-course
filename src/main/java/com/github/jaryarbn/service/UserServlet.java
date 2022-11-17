@@ -3,7 +3,6 @@ package com.github.jaryarbn.service;
 import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,7 +12,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@WebServlet("*.user")
+
 public class UserServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,11 +24,7 @@ public class UserServlet extends HttpServlet {
 			login(req,resp);
 		}
 		if("/register.user".equals(path)){
-			try {
-				register(req,resp);
-			} catch (SQLException e) {
-				throw new RuntimeException(e);
-			}
+			register(req,resp);
 		}
 		
 	}
@@ -47,7 +42,7 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 	
-	protected void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+	protected void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username=req.getParameter("username");
 		String password=req.getParameter("password");
 		String phone=req.getParameter("phone");
