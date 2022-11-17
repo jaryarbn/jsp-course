@@ -36,7 +36,7 @@ User u=(User)session.getAttribute("user");
     		%>
     		<tr>
     			<td><%=i %></td>
-    			<td><%=g.getGoodsname() %></td>
+    			<td><%=g.getGoodsName() %></td>
     			<td><%=g.getPrice() %></td>
     			<td><a href="<%=request.getContextPath()%>/check.user?tag=AddCart&index=<%=i %>">加入购物车</a></td>
     		</tr>

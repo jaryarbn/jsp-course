@@ -3,17 +3,17 @@ package com.github.jaryarbn.entity;
 
 public class Goods {
 	
-	private String goodsname;
+	private String goodsName;
 	private double price;
 	public Goods() {
 		super();
 		
 	}
-	public String getGoodsname() {
-		return goodsname;
+	public String getGoodsName() {
+		return goodsName;
 	}
-	public void setGoodsname(String goodsname) {
-		this.goodsname = goodsname;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
 	public double getPrice() {
 		return price;

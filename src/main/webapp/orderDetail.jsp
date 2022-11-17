@@ -34,7 +34,7 @@ for(Order o:order){
 	 %>
 	 <tr>
 	 	<td><%=i %></td>
-	 	<td><%=o.getGoodsname() %></td>
+	 	<td><%=o.getGoodsName() %></td>
 	 	<td><%=o.getNumber() %></td>
 	 	<td><%=o.getPrice() %></td>
 	 </tr>

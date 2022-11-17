@@ -4,7 +4,7 @@ package com.github.jaryarbn.entity;
 
 public class Order {
 	private String id;
-	private String goodsname;
+	private String goodsName;
 	private int number;
 	private double price;
 	private String username;
@@ -17,11 +17,11 @@ public class Order {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getGoodsname() {
-		return goodsname;
+	public String getGoodsName() {
+		return goodsName;
 	}
-	public void setGoodsname(String goodsname) {
-		this.goodsname = goodsname;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
 	public int getNumber() {
 		return number;

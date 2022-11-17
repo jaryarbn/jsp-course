@@ -39,7 +39,7 @@ for(Cart c:cart){
     	%>
     	<tr>
     		<td><%=i %></td>
-    		<td><%=c.getGoodsname() %></td>
+    		<td><%=c.getGoodsName() %></td>
     		<td><%=c.getNumber() %></td>
     		<td><%=c.getPrice() %></td>
     	</tr>

@@ -35,7 +35,7 @@ public class GoodsServlet extends HttpServlet {
 		try {
 			while(rs.next()) {
 				Goods g=new Goods();
-				g.setGoodsname(rs.getString(2));
+				g.setGoodsName(rs.getString(2));
 				g.setPrice(rs.getDouble(3));
 				goods.add(g);
 				

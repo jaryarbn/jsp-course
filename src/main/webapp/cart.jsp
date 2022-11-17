@@ -41,10 +41,10 @@ int flag=1;
     	%>
     	<tr>
     		<td><%=i %></td>
-    		<td><%=c.getGoodsname() %></td>
+    		<td><%=c.getGoodsName() %></td>
     		<td><%=c.getNumber() %></td>
     		<td><%=c.getPrice() %></td>
-    		<td><a href="<%=request.getContextPath()%>/delete.cart?goodsname=<%=c.getGoodsname() %>">删除</a></td>
+    		<td><a href="<%=request.getContextPath()%>/delete.cart?goodsname=<%=c.getGoodsName() %>">删除</a></td>
     	</tr>
     	<%} }else
     	{%>

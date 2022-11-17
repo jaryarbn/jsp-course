@@ -97,7 +97,7 @@ public class CartServlet extends HttpServlet {
         try {
             while (rs.next()) {
                 Cart c = new Cart();
-                c.setGoodsname(rs.getString(1));
+                c.setGoodsName(rs.getString(1));
                 c.setNumber(rs.getInt(2));
                 c.setPrice(rs.getDouble(3));
                 c.setUsername(username);
