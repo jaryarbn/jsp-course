@@ -42,7 +42,7 @@ public class CartServlet extends HttpServlet {
         User u = (User) req.getSession().getAttribute("user");
         String username = u.getUsername();
         DataBase db = new DataBase();
-        ResultSet rs = db.getData("SELECT * FROM t_goods where goodsid=" + index);
+        ResultSet rs = db.getData("SELECT * FROM t_goods where goods_id=" + index);
         String goodsname = "";
         BigDecimal price = BigDecimal.valueOf(0.0);
         try {
@@ -57,15 +57,15 @@ public class CartServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        rs = db.getData("SELECT * FROM t_cart  where goodsname='" + goodsname + "' and un='" + username + "'");
+        rs = db.getData("SELECT * FROM t_cart  where goods_name='" + goodsname + "' and un='" + username + "'");
         try {
             if (rs.next()) {
-                String sql = "UPDATE t_cart SET number=" + (rs.getInt("number") + 1) + ",price=" + (price.multiply(BigDecimal.valueOf(rs.getInt("number") + 1))) + " where goodsname='" + goodsname + "' and un='" + username + "'";
+                String sql = "UPDATE t_cart SET number=" + (rs.getInt("number") + 1) + ",price=" + (price.multiply(BigDecimal.valueOf(rs.getInt("number") + 1))) + " where goods_name='" + goodsname + "' and un='" + username + "'";
                 db.setData(sql);
                 req.setAttribute("msg", "商品" + goodsname + "加入购物车成功！");
                 req.getRequestDispatcher("/show.goods").forward(req, resp);
             } else {
-                String sql = "insert into t_cart(goodsname,number,price,un) values('" + goodsname + "',1,'" + price + "','" + username + "')";
+                String sql = "insert into t_cart(goods_name,number,price,un) values('" + goodsname + "',1,'" + price + "','" + username + "')";
                 System.out.print(sql);
                 db.setData(sql);
                 req.setAttribute("msg", "商品" + goodsname + "加入购物车成功！");
@@ -137,11 +137,11 @@ public class CartServlet extends HttpServlet {
         }
         //删除某个
         else {
-            String goodsname = req.getParameter("goodsname");
-//			byte[] b=goodsname.getBytes("ISO8859-1");
-//			goodsname=new String(b,"utf-8");
+            String goodsName = req.getParameter("goods_name");
+//			byte[] b=goods_name.getBytes("ISO8859-1");
+//			goods_name=new String(b,"utf-8");
 //			这里取得的编码是utf-8不做处理，tomcat版本不同返回的值编码可能不一样，如果中文乱码，则对编码进行处理
-            String sql = "DELETE FROM t_cart WHERE goodsname = '" + goodsname + "' ";
+            String sql = "DELETE FROM t_cart WHERE goods_name = '" + goodsName + "' ";
             db.setData(sql);
             resp.sendRedirect(req.getContextPath() + "/show.cart");
         }

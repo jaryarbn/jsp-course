@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 CREATE TABLE `t_cart`
 (
-    `goodsname` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+    goods_name varchar(50) CHARACTER SET utf8mb4 NOT NULL,
     `number`    int                               NOT NULL,
     `price`     double                            NULL DEFAULT NULL,
     `un`        varchar(50) CHARACTER SET utf8mb4 NULL DEFAULT NULL
@@ -25,11 +25,11 @@ CREATE TABLE `t_cart`
 -- ----------------------------
 CREATE TABLE `t_goods`
 (
-    `goodsid`   int                               NOT NULL AUTO_INCREMENT,
-    `goodsname` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+    `goods_id`   int                               NOT NULL AUTO_INCREMENT,
+    `goods_name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
     `price`     decimal                           NULL DEFAULT NULL,
-    PRIMARY KEY (`goodsid`) USING BTREE,
-    UNIQUE INDEX `goodsname` (`goodsname`) USING BTREE
+    PRIMARY KEY (`goods_id`) USING BTREE,
+    UNIQUE INDEX `goods_name` (`goods_name`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 6
   CHARACTER SET = utf8mb4
@@ -56,7 +56,7 @@ CREATE TABLE `t_order`
 (
     `id`        varchar(80) CHARACTER SET utf8mb4 NOT NULL,
     `un`        varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-    `goodsname` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+    `goods_name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
     `number`    int                               NOT NULL,
     `price`     double                            NOT NULL
 ) ENGINE = InnoDB

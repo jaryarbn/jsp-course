@@ -70,7 +70,7 @@ public class OrderServlet extends HttpServlet {
             while (rs.next()) {
                 Order o = new Order();
                 o.setUsername(rs.getString("un"));
-                o.setGoodsName(rs.getString("goodsname"));
+                o.setGoodsName(rs.getString("goods_name"));
                 o.setNumber(rs.getInt("number"));
                 o.setPrice(rs.getDouble("price"));
                 o.setId(OrderId);
@@ -137,7 +137,7 @@ public class OrderServlet extends HttpServlet {
         String username = u.getUsername();
         DataBase db = new DataBase();
         for (Cart c : cart_) {
-            String sql = "insert into t_order(id,un,goodsname,number,price) values('" + id + "','" + username + "','" + c.getGoodsName() + "'," + c.getNumber() + "," + c.getPrice() + ")";
+            String sql = "insert into t_order(id,un,goods_name,number,price) values('" + id + "','" + username + "','" + c.getGoodsName() + "'," + c.getNumber() + "," + c.getPrice() + ")";
             db.setData(sql);
         }
         db.setData("DELETE FROM t_cart");

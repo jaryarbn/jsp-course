@@ -17,7 +17,7 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "*.goods", loadOnStartup = 1)
 public class GoodsServlet extends HttpServlet {
-    public static List<Goods> goods = new ArrayList<Goods>();
+    public static List<Goods> goods = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
