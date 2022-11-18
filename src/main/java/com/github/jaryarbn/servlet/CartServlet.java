@@ -100,7 +100,7 @@ public class CartServlet extends HttpServlet {
                 Cart c = new Cart();
                 c.setGoodsName(rs.getString(1));
                 c.setNumber(rs.getInt(2));
-                c.setPrice(rs.getDouble(3));
+                c.setPrice(rs.getBigDecimal(3));
                 c.setUsername(username);
                 cart.add(c);
 

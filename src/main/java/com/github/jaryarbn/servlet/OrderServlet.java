@@ -72,12 +72,10 @@ public class OrderServlet extends HttpServlet {
                 o.setUsername(rs.getString("un"));
                 o.setGoodsName(rs.getString("goods_name"));
                 o.setNumber(rs.getInt("number"));
-                o.setPrice(rs.getDouble("price"));
+                o.setPrice(rs.getBigDecimal("price"));
                 o.setId(OrderId);
                 order.add(o);
             }
-
-
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -108,8 +106,6 @@ public class OrderServlet extends HttpServlet {
                 String id = rs.getString("id");
                 OrderId.add(id);
             }
-
-
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -123,7 +119,6 @@ public class OrderServlet extends HttpServlet {
                 }
             }
         }
-
         req.setAttribute("OrderId", OrderId);
         req.getRequestDispatcher("historyOrders.jsp").forward(req, resp);
         OrderId.clear();
@@ -153,19 +148,15 @@ public class OrderServlet extends HttpServlet {
         String username = u.getUsername();
         DataBase db = new DataBase();
         ResultSet rs = db.getData("SELECT * FROM t_cart where un='" + username + "'");
-
         try {
             while (rs.next()) {
                 Cart c = new Cart();
                 c.setGoodsName(rs.getString(1));
                 c.setNumber(rs.getInt(2));
-                c.setPrice(rs.getDouble(3));
+                c.setPrice(rs.getBigDecimal(3));
                 c.setUsername(username);
                 cart.add(c);
-
             }
-
-
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -188,5 +179,4 @@ public class OrderServlet extends HttpServlet {
         cart.clear();
         db.close();
     }
-
 }

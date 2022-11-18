@@ -39,7 +39,7 @@ public class GoodsServlet extends HttpServlet {
             while (rs.next()) {
                 Goods g = new Goods();
                 g.setGoodsName(rs.getString(2));
-                g.setPrice(rs.getDouble(3));
+                g.setPrice(rs.getBigDecimal(3));
                 goods.add(g);
             }
         } catch (SQLException e) {

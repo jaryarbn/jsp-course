@@ -1,10 +1,12 @@
 package com.github.jaryarbn.entity;
 
 
+import java.math.BigDecimal;
+
 public class Cart {
     private String goodsName;
     private int number;
-    private double price;
+    private BigDecimal price;
     private String username;
 
     public String getGoodsName() {
@@ -23,11 +25,11 @@ public class Cart {
         this.number = number;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
