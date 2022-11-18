@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page import="java.util.List" pageEncoding="UTF-8" %>
 <%@ page import="com.github.jaryarbn.entity.Cart" %>
 <%@ page import="java.math.BigDecimal" %>
 <%

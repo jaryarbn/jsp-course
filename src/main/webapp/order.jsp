@@ -2,7 +2,7 @@
 <%@ page import="com.github.jaryarbn.entity.Cart" %>
 <%@ page import="com.github.jaryarbn.entity.User" %>
 <%@ page import="java.math.BigDecimal" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%
     List<Cart> cart = (List<Cart>) request.getAttribute("cart");
