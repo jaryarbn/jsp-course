@@ -1,8 +1,9 @@
-package com.github.jaryarbn.service;
+package com.github.jaryarbn.servlet;
 
 import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+@WebServlet(urlPatterns = "*.user", loadOnStartup = 1)
 public class UserServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

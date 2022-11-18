@@ -33,7 +33,7 @@ docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSW
 
     - Generate the war package and put it in `/webapps` directory:
       ```bash
-      ./mvnw package
+      ./mvnw clean package
       ```
       ```bash
       mv

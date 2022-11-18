@@ -1,10 +1,11 @@
-package com.github.jaryarbn.service;
+package com.github.jaryarbn.servlet;
 
 import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.Cart;
 import com.github.jaryarbn.entity.Order;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-
+@WebServlet(urlPatterns = "*.order", loadOnStartup = 1)
 public class OrderServlet extends HttpServlet {
     public static List<Cart> cart = new ArrayList<>();
     //备份cart 生成订单时用

@@ -15,7 +15,7 @@ public class DataBase {
         String username = "root";
         String password = "root";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
         } catch (Exception e) {
             e.printStackTrace();

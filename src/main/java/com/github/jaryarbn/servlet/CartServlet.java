@@ -1,9 +1,10 @@
-package com.github.jaryarbn.service;
+package com.github.jaryarbn.servlet;
 
 import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.Cart;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,9 +16,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@WebServlet(urlPatterns = "*.cart", loadOnStartup = 1)
 public class CartServlet extends HttpServlet {
-    public static List<Cart> cart = new ArrayList<Cart>();
+    public static List<Cart> cart = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
