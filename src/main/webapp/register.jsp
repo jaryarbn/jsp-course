@@ -4,7 +4,7 @@
 <html>
 <head>
 
-    <title>用户注册</title>
+    <title>用户注册页面</title>
 
 
     <!--

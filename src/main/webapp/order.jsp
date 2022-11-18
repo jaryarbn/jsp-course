@@ -16,7 +16,7 @@ for(Cart c:cart){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>订单页面</title>
 </head>
 <body>
 <h1>确认订单</h1>

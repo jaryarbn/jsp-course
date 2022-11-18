@@ -7,7 +7,7 @@ String id = (String)request.getAttribute("id");
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Success!</title>
 </head>
 <body>
 <h1>生成订单</h1>

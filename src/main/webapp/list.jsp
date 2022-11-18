@@ -11,7 +11,7 @@ User u=(User)session.getAttribute("user");
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>商品列表界面</title>
 </head>
 <body>
 <h1>商品列表</h1>

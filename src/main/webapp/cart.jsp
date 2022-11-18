@@ -20,7 +20,7 @@ int flag=1;
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
-  </head>
+	  <title>购物车页面</title></head>
   
   <body>
     <h1>我的购物车</h1>
