@@ -36,7 +36,18 @@ docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSW
       ./mvnw clean package
       ```
       ```bash
-      mv
+      mv ./target/jsp-course-1.0-SNAPSHOT.war
       ```
-
     - Then access `http://localhost:8080`.
+## 实现功能
+- 用户登录
+  - 注销
+- 用户注册
+- 购物车
+  - 添加商品
+  - 删除商品
+  - 清空购物车
+- 订单
+  - 生成订单
+  - 查看历史订单
+  - 查看订单详情
