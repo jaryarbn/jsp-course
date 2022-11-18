@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-@WebServlet(urlPatterns = "*.order", loadOnStartup = 1)
+@WebServlet(urlPatterns = "*.order", name = "OrderServlet", loadOnStartup = 1)
 public class OrderServlet extends HttpServlet {
     public static List<Cart> cart = new ArrayList<>();
     // 备份cart 生成订单时用
@@ -29,7 +29,7 @@ public class OrderServlet extends HttpServlet {
     // 订单详情 List
     public static List<Order> order = new ArrayList<>();
 
-    // 时间+随机数
+    // 生成订单的时间+随机数
     public static String getOrderIdByTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String newDate = sdf.format(new Date());

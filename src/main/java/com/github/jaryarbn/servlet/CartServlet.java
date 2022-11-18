@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "*.cart", loadOnStartup = 1)
+@WebServlet(urlPatterns = "*.cart", name = "CartServlet",loadOnStartup = 1)
 public class CartServlet extends HttpServlet {
     public static List<Cart> cart = new ArrayList<>();
 

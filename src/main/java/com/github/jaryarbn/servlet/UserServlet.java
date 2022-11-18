@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "*.user", loadOnStartup = 1)
+@WebServlet(urlPatterns = "*.user", name = "UserServlet", loadOnStartup = 1)
 public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
