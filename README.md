@@ -1,6 +1,6 @@
 # 部署指南
 
-[![build](https://img.shields.io/github/workflow/status/jaryarbn/jsp-course/Java%20CI%20with%20Maven?label=build&style=flat-square)](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml)
+[![build](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml/badge.svg)](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml)
 
 - Install Docker and Run MySQL:
 
