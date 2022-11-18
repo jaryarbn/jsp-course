@@ -58,4 +58,5 @@
 <h1 style="color: red;"><%=msg != null ? msg : "" %>
 </h1>
 <a href="<%=request.getContextPath()%>/show.goods">返回</a>
+<a href="<%=request.getContextPath()%>/login.jsp">已有账号？点击登录</a>
 </html>
