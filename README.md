@@ -41,8 +41,11 @@ docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSW
     - Then access `http://localhost:8080`.
 # 实现功能
 - 用户注册
-  - [x] 验证码
+  - [x] 注册功能
+  - [x] 验证码：展示验证码图片，并可以点击切换
+  - [x] 校验验证码：验证码填写不正确，则注册失败
 - 用户登录
+  - [x] 登录功能
   - [x] 记住密码
   - [x] 注销
 - 购物车
