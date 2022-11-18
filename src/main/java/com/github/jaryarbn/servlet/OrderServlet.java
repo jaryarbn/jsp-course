@@ -22,14 +22,14 @@ import java.util.Random;
 @WebServlet(urlPatterns = "*.order", loadOnStartup = 1)
 public class OrderServlet extends HttpServlet {
     public static List<Cart> cart = new ArrayList<>();
-    //备份cart 生成订单时用
+    // 备份cart 生成订单时用
     public static List<Cart> cart_ = new ArrayList<>();
-    //订单号 list
+    // 订单号 list
     public static List<String> OrderId = new ArrayList<>();
-    //订单详情 List
+    // 订单详情 List
     public static List<Order> order = new ArrayList<>();
 
-    //时间+随机数
+    // 时间+随机数
     public static String getOrderIdByTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String newDate = sdf.format(new Date());
@@ -61,7 +61,7 @@ public class OrderServlet extends HttpServlet {
         }
     }
 
-    //订单详情
+    // 订单详情
     protected void detail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String OrderId = req.getParameter("id");
         DataBase db = new DataBase();
@@ -96,7 +96,7 @@ public class OrderServlet extends HttpServlet {
 
     }
 
-    //查询历史订单
+    // 查询历史订单
     protected void showOrders(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DataBase db = new DataBase();
         User u = (User) req.getSession().getAttribute("user");
@@ -125,7 +125,7 @@ public class OrderServlet extends HttpServlet {
         db.close();
     }
 
-    //生成订单
+    // 生成订单
     protected void generate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = getOrderIdByTime();
         User u = (User) req.getSession().getAttribute("user");
@@ -142,7 +142,7 @@ public class OrderServlet extends HttpServlet {
         db.close();
     }
 
-    //确认订单
+    // 确认订单
     protected void confirm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User u = (User) req.getSession().getAttribute("user");
         String username = u.getUsername();
@@ -172,10 +172,10 @@ public class OrderServlet extends HttpServlet {
         }
         req.setAttribute("cart", cart);
         req.getRequestDispatcher("order.jsp").forward(req, resp);
-        //备份 cart
+        // 备份 cart
         cart_.clear();
         cart_.addAll(cart);
-        //清空
+        // 清空
         cart.clear();
         db.close();
     }

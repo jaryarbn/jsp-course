@@ -119,7 +119,6 @@ public class UserServlet extends HttpServlet {
             }
         }
         db.close();
-
     }
 
     protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
