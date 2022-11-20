@@ -50,9 +50,22 @@
                 </label>
             </td>
         </tr>
+        <tr>
+            <td>验证码：</td>
+            <td>
+                <label for="checkCode"></label><input name="checkCode" type="text" id="checkCode">
+                <img id="checkCodeImg" src="<%=request.getContextPath()%>/checkCodeServlet">
+                <a href="#" id="changeImg">看不清？</a>
+            </td>
+        </tr>
     </table>
     <input type="submit" value="注册">
 </form>
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("checkCodeImg").src = "checkCodeServlet?" + new Date().getMilliseconds();
+    }
+</script>
 </body>
 <br>
 <h1 style="color: red;"><%=msg != null ? msg : "" %>

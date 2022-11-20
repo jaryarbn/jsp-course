@@ -89,7 +89,7 @@ CREATE TABLE `t_user`
 -- Records of t_user
 -- ----------------------------
 INSERT INTO `t_user`
-VALUES ('user1', '123456', '13588888888', 'jaryarbn');
+VALUES ('admin', '123456', '13588888888', 'github');
 
 SET
     FOREIGN_KEY_CHECKS = 1;

@@ -1,6 +1,10 @@
 # 部署指南
 
+
 [![build](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml/badge.svg)](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml)
+
+**Tech Stack : JSP / Servlet / Docker / MySQL / Flyway / Maven / Cookie / Session**
+
 
 - Install Docker and Run MySQL:
 
@@ -36,14 +40,14 @@ docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSW
       ./mvnw clean package
       ```
       ```bash
-      mv ./target/jsp-course-1.0-SNAPSHOT.war
+      mv ./target/jsp-course-1.0-SNAPSHOT.war /path/to
       ```
     - Then access `http://localhost:8080`.
 # 实现功能
 - 用户注册
   - [x] 注册功能，如果重复注册，提示用户名已注册，请重新注册
-  - [ ] 验证码：展示验证码图片，并可以点击切换
-  - [ ] 校验验证码：验证码填写不正确，则注册失败
+  - [x] 验证码：展示验证码图片，并可以点击切换
+  - [x] 校验验证码：验证码填写不正确，则注册失败
 - 用户登录
   - [x] 登录功能
   - [x] 记住密码，下次访问自动填入登录框中

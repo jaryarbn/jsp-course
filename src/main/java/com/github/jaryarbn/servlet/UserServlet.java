@@ -49,6 +49,23 @@ public class UserServlet extends HttpServlet {
         String password = req.getParameter("password");
         String phone = req.getParameter("phone");
         String address = req.getParameter("address");
+
+        // 获取用户输入的验证码
+        String checkCode = req.getParameter("checkCode");
+
+        // 程序生成的验证码，从Session获取
+        HttpSession session = req.getSession();
+        String checkCodeGenerate = (String) session.getAttribute("checkCodeGenerate");
+
+        // 比对验证码
+        if (!checkCodeGenerate.equalsIgnoreCase(checkCode)) {
+
+            req.setAttribute("msg", "验证码错误！！");
+            req.getRequestDispatcher("/register.jsp").forward(req, resp);
+            // 不允许注册
+            return;
+        }
+
         DataBase db = new DataBase();
         ResultSet rs = db.getData("SELECT * FROM t_user where un='" + username + "'");
         try {
@@ -121,13 +138,13 @@ public class UserServlet extends HttpServlet {
         db.close();
     }
 
-    protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
         session.invalidate();
         resp.sendRedirect(req.getContextPath() + "/show.goods");
     }
 
-    protected void check(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void check(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User u = (User) req.getSession().getAttribute("user");
         if (u == null) {
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
