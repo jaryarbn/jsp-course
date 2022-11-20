@@ -1,6 +1,6 @@
 package com.github.jaryarbn.servlet;
 
-import com.github.jaryarbn.mysql.DataBase;
+import com.github.jaryarbn.dao.DataBase;
 import com.github.jaryarbn.entity.Cart;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "*.cart", name = "CartServlet",loadOnStartup = 1)
+@WebServlet(urlPatterns = "*.cart", name = "CartServlet", loadOnStartup = 1)
 public class CartServlet extends HttpServlet {
     public static List<Cart> cart = new ArrayList<>();
 
@@ -71,7 +71,6 @@ public class CartServlet extends HttpServlet {
                 req.setAttribute("msg", "商品" + goodsname + "加入购物车成功！");
                 req.getRequestDispatcher("/show.goods").forward(req, resp);
             }
-
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -86,7 +85,6 @@ public class CartServlet extends HttpServlet {
             }
         }
         db.close();
-
     }
 
     protected void show(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
