@@ -3,7 +3,7 @@
 
 [![build](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml/badge.svg)](https://github.com/jaryarbn/jsp-course/actions/workflows/maven.yml)
 
-**Tech Stack : JSP / Servlet / Docker / MySQL / Flyway / Maven / Cookie / Session**
+**Tech Stack : JSP / Servlet / Docker / MySQL 8 / Flyway / Maven / Cookie / Session / Tomcat 10**
 
 
 - Install Docker and Run MySQL:
