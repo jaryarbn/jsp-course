@@ -1,4 +1,4 @@
-package com.github.jaryarbn.dao;
+package com.github.jaryarbn.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

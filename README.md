@@ -32,7 +32,7 @@ docker run -d -v `pwd`/shop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSW
 - Optional 2: Run with docker.
     - Run Tomcat container and wait the containers started:
       ```bash
-      docker run -d -p 8080:8080 tomcat
+      docker run -d -p 8088:8080 -v /path/to:/usr/local/tomcat/webapps --restart=always tomcat
       ```
 
     - Generate the war package and put it in `/webapps` directory:

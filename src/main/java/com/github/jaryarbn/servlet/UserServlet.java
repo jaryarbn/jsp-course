@@ -1,6 +1,6 @@
 package com.github.jaryarbn.servlet;
 
-import com.github.jaryarbn.dao.DataBase;
+import com.github.jaryarbn.mysql.DataBase;
 import com.github.jaryarbn.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

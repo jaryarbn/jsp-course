@@ -1,6 +1,6 @@
 package com.github.jaryarbn.servlet;
 
-import com.github.jaryarbn.dao.DataBase;
+import com.github.jaryarbn.mysql.DataBase;
 import com.github.jaryarbn.entity.Cart;
 import com.github.jaryarbn.entity.Order;
 import com.github.jaryarbn.entity.User;
