@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 CREATE TABLE `t_cart`
 (
-    goods_name varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+    `goods_name` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
     `number`    int                               NOT NULL,
     `price`     double                            NULL DEFAULT NULL,
     `un`        varchar(50) CHARACTER SET utf8mb4 NULL DEFAULT NULL

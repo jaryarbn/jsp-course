@@ -43,11 +43,11 @@ public class CartServlet extends HttpServlet {
         String username = u.getUsername();
         DataBase db = new DataBase();
         ResultSet rs = db.getData("SELECT * FROM t_goods where goods_id=" + index);
-        String goodsname = "";
+        String goods_name = "";
         BigDecimal price = BigDecimal.valueOf(0.0);
         try {
             if (rs.next()) {
-                goodsname = rs.getString(2);
+                goods_name = rs.getString(2);
                 price = BigDecimal.valueOf(rs.getDouble(3));
             } else {
                 System.out.println("获取出错！！！");
@@ -57,18 +57,18 @@ public class CartServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        rs = db.getData("SELECT * FROM t_cart  where goods_name='" + goodsname + "' and un='" + username + "'");
+        rs = db.getData("SELECT * FROM t_cart  where goods_name='" + goods_name + "' and un='" + username + "'");
         try {
             if (rs.next()) {
-                String sql = "UPDATE t_cart SET number=" + (rs.getInt("number") + 1) + ",price=" + (price.multiply(BigDecimal.valueOf(rs.getInt("number") + 1))) + " where goods_name='" + goodsname + "' and un='" + username + "'";
+                String sql = "UPDATE t_cart SET number=" + (rs.getInt("number") + 1) + ",price=" + (price.multiply(BigDecimal.valueOf(rs.getInt("number") + 1))) + " where goods_name='" + goods_name + "' and un='" + username + "'";
                 db.setData(sql);
-                req.setAttribute("msg", "商品" + goodsname + "加入购物车成功！");
+                req.setAttribute("msg", "商品" + goods_name + "加入购物车成功！");
                 req.getRequestDispatcher("/show.goods").forward(req, resp);
             } else {
-                String sql = "insert into t_cart(goods_name,number,price,un) values('" + goodsname + "',1,'" + price + "','" + username + "')";
+                String sql = "insert into t_cart(goods_name,number,price,un) values('" + goods_name + "',1,'" + price + "','" + username + "')";
                 System.out.print(sql);
                 db.setData(sql);
-                req.setAttribute("msg", "商品" + goodsname + "加入购物车成功！");
+                req.setAttribute("msg", "商品" + goods_name + "加入购物车成功！");
                 req.getRequestDispatcher("/show.goods").forward(req, resp);
             }
         } catch (SQLException e) {
@@ -140,10 +140,13 @@ public class CartServlet extends HttpServlet {
 //			goods_name=new String(b,"utf-8");
 //			这里取得的编码是utf-8不做处理，tomcat版本不同返回的值编码可能不一样，如果中文乱码，则对编码进行处理
             String sql = "DELETE FROM t_cart WHERE goods_name = '" + goodsName + "' ";
+
+            System.out.println(sql);
+
+
             db.setData(sql);
             resp.sendRedirect(req.getContextPath() + "/show.cart");
         }
         db.close();
     }
-
 }

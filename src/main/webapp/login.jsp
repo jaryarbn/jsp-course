@@ -42,5 +42,6 @@
 <h1 style="color: red;"><%=msg != null ? msg : "" %>
 </h1>
 <a href="<%=request.getContextPath()%>/show.goods">返回</a>
+<a href="<%=request.getContextPath()%>/register.jsp">没有账号？点击注册</a>
 </body>
 </html>

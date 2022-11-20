@@ -47,7 +47,7 @@
         </td>
         <td><%=c.getPrice() %>
         </td>
-        <td><a href="<%=request.getContextPath()%>/delete.cart?goodsname=<%=c.getGoodsName() %>">删除</a></td>
+        <td><a href="<%=request.getContextPath()%>/delete.cart?goods_name=<%=c.getGoodsName() %>">删除</a></td>
     </tr>
     <%
         }
